@@ -1,0 +1,22 @@
+Q8: write a function to convert the nested list to list using for loop
+input:    List(List(1,2,3,4),List(3,4,5), Nil, List(11,34,6))
+Output: List(1,2,3,4, 3,4,5,11,34,6)
+
+
+object ListPrintExample extends App {
+  def list2(input1: List[List[Int]]): List[Int] = {
+    var result: List[Int] = List.empty
+
+    for (subList <- input1) {
+      for (element <- subList) {
+        result = result :+ element
+      }
+    }
+    result
+
+  }
+  val input1 = List(List(1, 2, 3, 4), List(3, 4, 5), Nil, List(11, 34, 6))
+  val list=list2(input1)
+  println(list)
+
+}

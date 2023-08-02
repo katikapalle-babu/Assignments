@@ -1,0 +1,57 @@
+
+ Q3: Write a function to find the element from a list using recursive and tail recursive way
+ //using recursion
+ def findKthElement[A](lst: List[A], k: Int): Option[A] = {
+  if (lst.isEmpty || k <= 0 || k > lst.length) {
+    None
+  } else if (k == 1) {
+    Some(lst.head)
+  } else {
+    findKthElement(lst.tail, k - 1)
+  }
+}
+
+
+val my_list = List(10, 20, 30, 40, 50)
+val k_value = 3
+val result = findKthElement(my_list, k_value)
+
+result match {
+  case Some(element) => println(s"The $k_value-th element is: $element")
+  case None => println(s"Invalid k value. The list has ${my_list.length} elements.")
+}
+
+
+//using tail recursion
+
+object Main extends App {
+  def findKthElement[A](lst: List[A], k: Int): Option[A] = {
+    @scala.annotation.tailrec
+    def findKthElementHelper(currentList: List[A], currentIndex: Int): Option[A] = {
+      currentList match {
+        case Nil => None // Base case: empty list, element not found
+        case head :: tail =>
+          if (currentIndex == k) Some(head) // Found the k-th element
+          else findKthElementHelper(tail, currentIndex + 1) // Continue recursively with the tail and increment the index
+      }
+    }
+
+    if (k <= 0 || k > lst.length) None // Invalid k, return None
+    else findKthElementHelper(lst, 1) // Start tail recursion with initial index 1
+  }
+
+  val my_list = List(10, 20, 30, 40, 50)
+  val k_value = 3
+  val result = findKthElement(my_list, k_value)
+
+  result match {
+    case Some(element) => println(s"The $k_value-th element is: $element")
+    case None => println(s"Invalid k value. The list has ${my_list.length} elements.")
+  }
+}
+
+
+
+
+
+

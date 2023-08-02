@@ -1,0 +1,14 @@
+Q6: check if the given string is palindrome or not
+
+
+object PalindromeCheck extends App {
+  def isPalindrome(input: String): Boolean = {
+    val String1 = input
+    String1 == String1.reverse
+  }
+
+  println(isPalindrome("level"))
+  println(isPalindrome("shobhan"))
+  println(isPalindrome("babu"))
+}
+

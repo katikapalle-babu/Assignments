@@ -1,0 +1,22 @@
+Q4: Give the example for both call by value and call by name method 
+
+object Main{
+  def callByValue(x: Int): Unit = {
+    println("Inside callByValue")
+    println(s"x = $x")
+  }
+
+  def callByName(x: => Int): Unit = {
+    println("Inside callByName")
+    println(s"x = $x")
+  }
+
+
+
+  def main(args: Array[String]) {
+    callByValue(23)
+    callByName(12 + 10)
+
+    }
+}
+

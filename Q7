@@ -1,0 +1,27 @@
+Q7: print the element of the list using for and for yield of below list
+   List(List(1,2,3,4),List(3,4,5), Nil, List(11,34,6))
+
+
+//using for loop
+object ListPrintExample extends App {
+  val listOfLists = List(List(1, 2, 3, 4), List(3, 4, 5), Nil, List(11, 34, 6))
+
+  println("Using 'for' loop:")
+  for (list <- listOfLists) {
+    for (element <- list) {
+      print(s"$element ")
+    }
+    println()
+  }
+}
+
+//Using 'for-yield
+
+object ListPrintExample extends App {
+  val listOfLists = List(List(1, 2, 3, 4), List(3, 4, 5), Nil, List(11, 34, 6))
+  println("Using 'for-yield' loop :")
+  for {
+    list <- listOfLists
+    element <- list
+  } yield print(element+" ")
+}

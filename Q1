@@ -1,0 +1,13 @@
+Q1: Give the example of type inference
+->Type inference at variable 
+val j=43   //  j is an Integer it automatically infers that  as Integer
+val s="sting // s is String it automatically infers that as String
+->Type inference at functions
+def add(a:Int,b:Int)=a+b  // return type of this function is Int  
+
+def greet(name:String)=s"Shobhan $name"- // return type is String 
+
+->Type inference at Collections
+val numbers=List(1,2,3,4,5)  // it is integer collection
+
+val names=List("shobhan","babu","k")  //String collection

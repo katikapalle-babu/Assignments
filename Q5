@@ -1,0 +1,11 @@
+Q5: How do we define the default value of a parameter in the function with example
+
+object DefaultValueExample extends App {
+  def Userinfo(name: String, age: Int = 30, city: String = "Unknown"): Unit =
+    println(s"Name: $name, Age: $age, City: $city")
+
+  Userinfo("shobhan", 24, "bangalore")                
+  Userinfo("babu")                                  
+  Userinfo("k", city = "tirupaathi")          
+}
+
